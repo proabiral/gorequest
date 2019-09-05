@@ -308,6 +308,16 @@ func (s *SuperAgent) CustomMethod(method, targetUrl string) *SuperAgent {
 	}
 }
 
+// Just a wrapper to initialize SuperAgent instance by multiple headers -- copied from customMethod of gorequest
+func (s *SuperAgent) CustomHeader(headers [][]string) *SuperAgent {
+	for _, header := range headers{
+		s.Set(header[0],header[1])
+	}
+	return s
+}
+
+
+
 func (s *SuperAgent) Get(targetUrl string) *SuperAgent {
 	s.ClearSuperAgent()
 	s.Method = GET
