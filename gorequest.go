@@ -28,7 +28,7 @@ import (
 
 	"path/filepath"
 
-	"github.com/moul/http2curl"
+	"moul.io/http2curl"
 	"golang.org/x/net/publicsuffix"
 )
 
